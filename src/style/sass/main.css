@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+*,
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 12px;
+  overflow-x: hidden;
+  font-family: "Inter", sans-serif;
+  width: 100%;
+}
+@media screen and (min-width: 360px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+img {
+  @apply no-click;
+}
+
+@layer utilities {
+  .site-container {
+    @apply max-w-[90rem] px-6 sm:px-16 xl:px-[7.5rem] mx-auto;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+  .no-click {
+    pointer-events: none;
+  }
+}
+.home {
+  @apply flex;
+}
