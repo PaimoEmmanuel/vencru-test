@@ -1,4 +1,5 @@
 import * as React from "react";
+import Settings from "../organisms/settings";
 import SideNav from "../organisms/side-nav";
 
 interface IHomePageProps {}
@@ -9,7 +10,9 @@ const HomePage: React.FunctionComponent<IHomePageProps> = (props) => {
       <aside>
         <SideNav />
       </aside>
-      <main className="setting__main">Settings main</main>
+      <main className="settings__main">
+        <Settings />
+      </main>
     </div>
   );
 };

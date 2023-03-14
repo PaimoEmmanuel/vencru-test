@@ -1,0 +1,84 @@
+.billing {
+  @apply pt-9;
+  &__header {
+    @apply flex justify-between text-lg items-center;
+  }
+  &__download {
+    @apply flex gap-2 font-medium items-center justify-center text-sm text-dark border-gray-200 bg-white;
+    @apply w-[9.125rem] h-10 rounded-lg;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  }
+  &__table {
+    @apply w-full border border-light-200 rounded-lg mt-6 overflow-hidden;
+    box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, 0.1),
+      0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+    &--head {
+      @apply text-left text-xs text-gray-100 font-medium px-6 py-3;
+      label {
+        @apply flex items-center gap-3;
+        &:hover {
+          .checkbox {
+            @apply border-purple-100 bg-purple-light;
+          }
+        }
+      }
+      .checkbox {
+        @apply w-5 h-5 border border-gray-200 rounded-md flex justify-center items-center transition-all cursor-pointer;
+      }
+      .check {
+        @apply opacity-0 transition-all;
+      }
+      .checkbox-input:checked + label .checkbox {
+        @apply border-purple-100 bg-purple-light;
+        .check {
+          @apply opacity-100;
+        }
+      }
+    }
+    &--data {
+      @apply text-sm p-6 border-t border-light-200 bg-white;
+      &-wrap {
+        @apply flex gap-3;
+        label {
+          @apply flex items-center gap-3;
+          &:hover {
+            .checkbox {
+              @apply border-purple-100 bg-purple-light;
+            }
+          }
+        }
+        .checkbox {
+          @apply w-5 h-5 border border-gray-200 rounded-md flex justify-center items-center transition-all cursor-pointer;
+          //   @apply hover:border-purple-100 hover:bg-purple-light;
+        }
+        .check {
+          @apply opacity-0 transition-all;
+        }
+        .checkbox-input:checked + label .checkbox {
+          @apply border-purple-100 bg-purple-light;
+          .check {
+            @apply opacity-100;
+          }
+        }
+      }
+    }
+    .amount {
+      @apply text-gray-100;
+    }
+    .status-paid {
+      @apply bg-green-light text-green text-xs font-medium flex gap-1 items-center py-1.5 px-2 w-fit rounded-full;
+    }
+    .users {
+      @apply flex;
+      img {
+        @apply h-6 w-6 object-cover rounded-full border border-white;
+        &:not(:first-child) {
+          @apply -ml-1;
+        }
+      }
+      &-plus {
+        @apply h-6 w-6 rounded-full bg-light border border-white -ml-1 text-xs font-medium flex justify-center items-center;
+      }
+    }
+  }
+}

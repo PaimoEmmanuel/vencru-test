@@ -1,0 +1,35 @@
+.nav {
+  @apply w-[17.5rem] h-full fixed py-8 overflow-y-scroll no-scrollbar;
+  &__logo {
+    @apply px-6 w-48 block;
+  }
+  &__search {
+    @apply relative px-6 mt-6;
+    input {
+      @apply w-full border border-gray-200 rounded-lg h-11 pl-10 pr-4 text-gray-100;
+      @apply placeholder:text-gray-100 transition-all focus:outline-none focus:border-purple-200;
+      box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+      &:hover, &:focus {
+        box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #f4ebff;
+      }
+    }
+    svg {
+      @apply absolute left-10 top-1/2 -translate-y-1/2;
+    }
+  }
+  &__links {
+    @apply px-4 mt-6 flex gap-1 flex-col;
+  }
+  &__link {
+    a {
+      @apply py-2 px-3.5 hover:text-[#101828] hover:bg-light hover:rounded-md;
+      @apply font-medium flex gap-3.5 items-center text-dark;
+      svg {
+        @apply w-6;
+      }
+      .actions {
+        @apply bg-[#F2F4F7] text-sm px-2.5 py-0.5 rounded-full ml-auto;
+      }
+    }
+  }
+}

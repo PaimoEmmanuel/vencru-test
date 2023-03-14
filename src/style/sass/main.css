@@ -41,6 +41,304 @@ img {
     pointer-events: none;
   }
 }
+.footer {
+  @apply px-4;
+}
+.footer__links {
+  @apply flex gap-1 flex-col mt-8;
+}
+.footer__links .active {
+  @apply text-[#101828] bg-light rounded-md;
+}
+.footer__link a {
+  @apply py-2 px-3.5 hover:text-[#101828] hover:bg-light hover:rounded-md;
+  @apply font-medium flex gap-3.5 items-center text-dark;
+}
+.footer__link a svg {
+  @apply w-6;
+}
+.footer__feature {
+  @apply mt-5 px-4 py-5 bg-light;
+}
+.footer__feature--heading {
+  @apply text-sm font-medium mb-1;
+}
+.footer__feature--text {
+  @apply text-sm text-gray-100;
+}
+.footer__feature--img {
+  @apply py-4 relative;
+}
+.footer__feature--img svg {
+  @apply absolute bottom-7 left-3;
+}
+.footer__feature--img img {
+  @apply w-full rounded-lg;
+}
+.footer__feature--note {
+  @apply flex text-sm gap-3 text-gray-100 font-medium;
+}
+.footer__feature--note .new {
+  @apply text-purple-100;
+}
+.footer__account {
+  @apply flex text-sm justify-between px-2 pt-6 mt-6 border-t border-light-200;
+}
+.footer__account--avatar {
+  @apply h-10 w-10 object-cover rounded-full;
+}
+.footer__account--name {
+  @apply font-medium;
+}
+.footer__account--mail {
+  @apply text-gray-100;
+}
+.footer__account--btn {
+  @apply flex;
+}
+
+.billing {
+  @apply pt-9;
+}
+.billing__header {
+  @apply flex justify-between text-lg items-center;
+}
+.billing__download {
+  @apply flex gap-2 font-medium items-center justify-center text-sm text-dark border-gray-200 bg-white;
+  @apply w-[9.125rem] h-10 rounded-lg;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+}
+.billing__table {
+  @apply w-full border border-light-200 rounded-lg mt-6 overflow-hidden;
+  box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+}
+.billing__table--head {
+  @apply text-left text-xs text-gray-100 font-medium px-6 py-3;
+}
+.billing__table--head label {
+  @apply flex items-center gap-3;
+}
+.billing__table--head label:hover .checkbox {
+  @apply border-purple-100 bg-purple-light;
+}
+.billing__table--head .checkbox {
+  @apply w-5 h-5 border border-gray-200 rounded-md flex justify-center items-center transition-all cursor-pointer;
+}
+.billing__table--head .check {
+  @apply opacity-0 transition-all;
+}
+.billing__table--head .checkbox-input:checked + label .checkbox {
+  @apply border-purple-100 bg-purple-light;
+}
+.billing__table--head .checkbox-input:checked + label .checkbox .check {
+  @apply opacity-100;
+}
+.billing__table--data {
+  @apply text-sm p-6 border-t border-light-200 bg-white;
+}
+.billing__table--data-wrap {
+  @apply flex gap-3;
+}
+.billing__table--data-wrap label {
+  @apply flex items-center gap-3;
+}
+.billing__table--data-wrap label:hover .checkbox {
+  @apply border-purple-100 bg-purple-light;
+}
+.billing__table--data-wrap .checkbox {
+  @apply w-5 h-5 border border-gray-200 rounded-md flex justify-center items-center transition-all cursor-pointer;
+}
+.billing__table--data-wrap .check {
+  @apply opacity-0 transition-all;
+}
+.billing__table--data-wrap .checkbox-input:checked + label .checkbox {
+  @apply border-purple-100 bg-purple-light;
+}
+.billing__table--data-wrap .checkbox-input:checked + label .checkbox .check {
+  @apply opacity-100;
+}
+.billing__table .amount {
+  @apply text-gray-100;
+}
+.billing__table .status-paid {
+  @apply bg-green-light text-green text-xs font-medium flex gap-1 items-center py-1.5 px-2 w-fit rounded-full;
+}
+.billing__table .users {
+  @apply flex;
+}
+.billing__table .users img {
+  @apply h-6 w-6 object-cover rounded-full border border-white;
+}
+.billing__table .users img:not(:first-child) {
+  @apply -ml-1;
+}
+.billing__table .users-plus {
+  @apply h-6 w-6 rounded-full bg-light border border-white -ml-1 text-xs font-medium flex justify-center items-center;
+}
+
+.nav {
+  @apply w-[17.5rem] h-full fixed py-8 overflow-y-scroll no-scrollbar;
+}
+.nav__logo {
+  @apply px-6 w-48 block;
+}
+.nav__search {
+  @apply relative px-6 mt-6;
+}
+.nav__search input {
+  @apply w-full border border-gray-200 rounded-lg h-11 pl-10 pr-4 text-gray-100;
+  @apply placeholder:text-gray-100 transition-all focus:outline-none focus:border-purple-200;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+}
+.nav__search input:hover, .nav__search input:focus {
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #f4ebff;
+}
+.nav__search svg {
+  @apply absolute left-10 top-1/2 -translate-y-1/2;
+}
+.nav__links {
+  @apply px-4 mt-6 flex gap-1 flex-col;
+}
+.nav__link a {
+  @apply py-2 px-3.5 hover:text-[#101828] hover:bg-light hover:rounded-md;
+  @apply font-medium flex gap-3.5 items-center text-dark;
+}
+.nav__link a svg {
+  @apply w-6;
+}
+.nav__link a .actions {
+  @apply bg-[#F2F4F7] text-sm px-2.5 py-0.5 rounded-full ml-auto;
+}
+
+.settings {
+  @apply bg-light p-8 pb-12;
+}
+.settings__heading {
+  @apply mb-6;
+}
+.settings__heading--primary {
+  @apply text-[1.875rem] font-medium;
+}
+.settings__heading--secondary {
+  @apply text-gray-100;
+}
+.settings__tab-btns {
+  @apply border border-gray-200 rounded-lg  flex w-fit overflow-hidden;
+}
+.settings__tab-btns .active {
+  @apply bg-light;
+}
+.settings__tab-btn {
+  @apply bg-white text-sm;
+}
+.settings__tab-btn:not(:last-child) {
+  @apply border-r border-gray-200;
+}
+.settings__tab-btn button {
+  @apply px-4 py-2.5;
+}
+.settings__payment {
+  @apply pt-8 pb-5 border-b border-light-200;
+}
+.settings__payment--heading {
+  @apply text-lg font-medium;
+}
+.settings__payment--text {
+  @apply text-sm text-gray-100 mt-1;
+}
+.settings__contact {
+  @apply flex pt-6 pb-1;
+}
+.settings__contact:not(:last-child) {
+  @apply border-b border-light-200;
+}
+.settings__contact--text {
+  @apply min-w-[17.5rem] text-sm;
+}
+.settings__contact--primary {
+  @apply text-dark font-medium;
+}
+.settings__contact--secondary {
+  @apply text-gray-100;
+}
+.settings__contact--input {
+  @apply text-sm flex flex-wrap gap-2 items-start mb-4;
+}
+.settings__contact--input input[type=radio] {
+  @apply mt-1;
+}
+.settings__contact--input input[type=text] {
+  @apply transition-all focus:outline-none focus:border-purple-200;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+}
+.settings__contact--input input[type=text]:hover, .settings__contact--input input[type=text]:focus {
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #f4ebff;
+}
+.settings__contact--input label p {
+  @apply font-medium text-dark;
+}
+.settings__contact--input label span {
+  @apply text-gray-100;
+}
+.settings__contact--input-grp {
+  @apply relative flex w-[30.5rem] mt-3;
+}
+.settings__contact--input-grp svg {
+  @apply absolute left-4 top-1/2 -translate-y-1/2;
+}
+.settings__contact--input-grp input {
+  @apply h-11 w-full pl-11 pr-4 border border-gray-200 rounded-lg;
+}
+.settings__card-details {
+  @apply relative flex mb-3 bg-white p-4 border border-light-200 hover:border-purple-200 transition-all rounded-lg text-sm;
+}
+.settings__card-label {
+  @apply relative flex w-full cursor-pointer;
+}
+.settings__card-text {
+  @apply ml-3;
+}
+.settings__card-check {
+  @apply ml-auto;
+}
+.settings__card-container {
+  @apply w-full;
+}
+.settings__card-container .selected {
+  @apply bg-purple-light border-purple-200;
+}
+.settings__card-container .selected .settings__card-number {
+  @apply text-[#53389E];
+}
+.settings__card-container .selected .settings__card-expiry {
+  @apply text-[#7F56D9];
+}
+.settings__card-container .selected .settings__card--default {
+  @apply text-[#9E77ED];
+}
+.settings__card-number {
+  @apply font-medium text-dark;
+}
+.settings__card-expiry {
+  @apply text-gray-100;
+}
+.settings__card--btns {
+  @apply flex gap-3 mt-2;
+}
+.settings__card--default {
+  @apply font-medium text-gray-100;
+}
+.settings__card--edit {
+  @apply font-medium text-purple-100;
+}
+.settings__card--add {
+  @apply flex gap-2 items-center text-sm text-gray-100;
+}
+
 .home {
   @apply flex;
+}
+
+.settings__main {
+  @apply ml-[17.5rem] w-full;
 }

@@ -2,8 +2,13 @@
 @import "./base/base";
 @import "./base/utilities";
 
+// MOLECULES
+@import "./molecules/nav-footer";
+@import "./molecules/billing";
+
 // ORGANISMS
 @import "./organisms/side-nav";
+@import "./organisms/settings";
 
 // PAGES
 @import "./pages/homepage";
