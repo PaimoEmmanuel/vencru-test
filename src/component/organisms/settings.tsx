@@ -71,7 +71,7 @@ const Settings: React.FunctionComponent<ISettingsProps> = (props) => {
                   <span className="settings__contact--radiobox">
                     <span className="settings__contact--radio"></span>
                   </span>
-                  <span>Send to an alternative email</span>
+                  <p>Send to an alternative email</p>
                 </label>
                 <div className="settings__contact--input-grp">
                   <svg
@@ -84,12 +84,12 @@ const Settings: React.FunctionComponent<ISettingsProps> = (props) => {
                     <path
                       d="M18.3333 3.00001C18.3333 2.08334 17.5833 1.33334 16.6667 1.33334H3.33332C2.41666 1.33334 1.66666 2.08334 1.66666 3.00001M18.3333 3.00001V13C18.3333 13.9167 17.5833 14.6667 16.6667 14.6667H3.33332C2.41666 14.6667 1.66666 13.9167 1.66666 13V3.00001M18.3333 3.00001L9.99999 8.83334L1.66666 3.00001"
                       stroke="#667085"
-                      stroke-width="1.66667"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="1.66667"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                   </svg>
-                  <input type="text" value="billing@untitledui.com" />
+                  <input type="text" value="billing@untitledui.com" readOnly />
                 </div>
               </div>
             </div>
@@ -124,9 +124,9 @@ const Settings: React.FunctionComponent<ISettingsProps> = (props) => {
                 <path
                   d="M10 4.16666V15.8333M4.16667 10H15.8333"
                   stroke="#667085"
-                  stroke-width="1.67"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="1.67"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
               Add new payment method

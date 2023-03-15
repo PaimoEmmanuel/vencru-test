@@ -75,9 +75,9 @@ const CardDetails: React.FunctionComponent<ICardDetailsProps> = ({
             <path
               d="M11.3334 5.5L6.75002 10.0833L4.66669 8"
               stroke="white"
-              stroke-width="1.66667"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.66667"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <rect
               x="0.5"
