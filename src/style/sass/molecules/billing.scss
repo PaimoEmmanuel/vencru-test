@@ -1,7 +1,7 @@
 .billing {
-  @apply pt-9;
+  @apply pt-9 bg-light  sm:p-8 pb-12;
   &__header {
-    @apply flex justify-between text-lg items-center;
+    @apply p-4 sm:p-0 flex flex-col sm:flex-row gap-4 justify-between text-lg sm:items-center;
   }
   &__download {
     @apply flex gap-2 font-medium items-center justify-center text-sm text-dark border-gray-200 bg-white;
@@ -61,6 +61,12 @@
           }
         }
       }
+    }
+    .date-table,
+    .status-table,
+    .users-table,
+    .download-table {
+      @apply hidden lg:table-cell;
     }
     .amount {
       @apply text-gray-100;

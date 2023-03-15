@@ -1,5 +1,5 @@
 .settings {
-  @apply bg-light p-8 pb-12;
+  @apply bg-light p-4 sm:p-8;
   &__heading {
     @apply mb-6;
     &--primary {
@@ -10,7 +10,8 @@
     }
   }
   &__tab-btns {
-    @apply border border-gray-200 rounded-lg  flex w-fit overflow-hidden;
+    @apply border-y md:border border-gray-200 md:rounded-lg  flex overflow-hidden absolute left-0 md:left-[unset] md:relative;
+    @apply overflow-scroll w-full md:w-fit no-scrollbar;
     .active {
       @apply bg-light;
     }
@@ -21,11 +22,11 @@
       @apply border-r border-gray-200;
     }
     button {
-      @apply px-4 py-2.5;
+      @apply px-4 py-2.5 whitespace-nowrap;
     }
   }
   &__payment {
-    @apply pt-8 pb-5 border-b border-light-200;
+    @apply pt-16 md:pt-8 pb-5 border-b border-light-200;
     &--heading {
       @apply text-lg font-medium;
     }
@@ -34,12 +35,12 @@
     }
   }
   &__contact {
-    @apply flex pt-6 pb-1;
+    @apply flex flex-col gap-5 lg:flex-row lg:gap-0 pt-6 pb-1;
     &:not(:last-child) {
       @apply border-b border-light-200;
     }
     &--text {
-      @apply min-w-[17.5rem] text-sm;
+      @apply lg:min-w-[17.5rem] text-sm;
     }
     &--primary {
       @apply text-dark font-medium;
@@ -78,6 +79,9 @@
           @apply opacity-100;
         }
       }
+      .label-group {
+        @apply w-full;
+      }
       label {
         @apply flex gap-2;
         &:hover {
@@ -93,7 +97,7 @@
         }
       }
       &-grp {
-        @apply relative flex w-[30.5rem] mt-3 ml-6;
+        @apply relative flex w-[calc(100%-1.5rem)] sm:w-[30.5rem] mt-3 ml-6;
         svg {
           @apply absolute left-4 top-1/2 -translate-y-1/2;
         }

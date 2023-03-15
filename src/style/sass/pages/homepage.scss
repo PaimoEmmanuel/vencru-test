@@ -1,6 +1,6 @@
 .home {
-  @apply flex;
+  @apply flex flex-col gap-[4.625rem] xl:gap-0 xl:flex-row;
 }
 .settings__main {
-  @apply ml-[17.5rem] w-full;
+  @apply xl:ml-[17.5rem] w-full;
 }

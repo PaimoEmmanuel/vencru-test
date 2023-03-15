@@ -22,14 +22,7 @@ body {
   }
 }
 
-img {
-  @apply no-click;
-}
-
 @layer utilities {
-  .site-container {
-    @apply max-w-[90rem] px-6 sm:px-16 xl:px-[7.5rem] mx-auto;
-  }
   .no-scrollbar {
     -ms-overflow-style: none; /* Internet Explorer 10+ */
     scrollbar-width: none; /* Firefox */
@@ -37,12 +30,9 @@ img {
   .no-scrollbar::-webkit-scrollbar {
     display: none; /* Safari and Chrome */
   }
-  .no-click {
-    pointer-events: none;
-  }
 }
 .footer {
-  @apply px-4;
+  @apply px-4 mt-auto;
 }
 .footer__links {
   @apply flex gap-1 flex-col mt-8;
@@ -58,7 +48,7 @@ img {
   @apply w-6;
 }
 .footer__feature {
-  @apply mt-5 px-4 py-5 bg-light;
+  @apply hidden xl:block mt-5 px-4 py-5 bg-light;
 }
 .footer__feature--heading {
   @apply text-sm font-medium mb-1;
@@ -97,14 +87,14 @@ img {
   @apply text-gray-100;
 }
 .footer__account--btn {
-  @apply flex;
+  @apply flex justify-center items-center rounded-md h-8 w-8 hover:bg-light;
 }
 
 .billing {
-  @apply pt-9;
+  @apply pt-9 bg-light  sm:p-8 pb-12;
 }
 .billing__header {
-  @apply flex justify-between text-lg items-center;
+  @apply p-4 sm:p-0 flex flex-col sm:flex-row gap-4 justify-between text-lg sm:items-center;
 }
 .billing__download {
   @apply flex gap-2 font-medium items-center justify-center text-sm text-dark border-gray-200 bg-white;
@@ -160,6 +150,12 @@ img {
 .billing__table--data-wrap .checkbox-input:checked + label .checkbox .check {
   @apply opacity-100;
 }
+.billing__table .date-table,
+.billing__table .status-table,
+.billing__table .users-table,
+.billing__table .download-table {
+  @apply hidden lg:table-cell;
+}
 .billing__table .amount {
   @apply text-gray-100;
 }
@@ -180,10 +176,10 @@ img {
 }
 
 .nav {
-  @apply w-[17.5rem] h-full fixed py-8 overflow-y-scroll no-scrollbar;
+  @apply w-[17.5rem] h-full fixed py-8 overflow-y-scroll no-scrollbar hidden xl:block;
 }
 .nav__logo {
-  @apply px-6 w-48 block;
+  @apply xl:px-6 w-36 lg:w-48 block;
 }
 .nav__search {
   @apply relative px-6 mt-6;
@@ -213,8 +209,40 @@ img {
   @apply bg-[#F2F4F7] text-sm px-2.5 py-0.5 rounded-full ml-auto;
 }
 
+.mobile-nav-header {
+  @apply flex xl:hidden justify-between items-center p-4 fixed w-full bg-white z-50;
+}
+.mobile-nav-menu {
+  @apply p-2 hover:bg-light rounded-md;
+}
+.mobile-nav-close {
+  @apply hidden fixed right-4 top-4 z-50 p-4 hover:bg-[#929292] rounded-lg;
+}
+.mobile-nav .nav {
+  @apply flex w-0 flex-col xl:hidden bg-white z-20;
+  transition: all 0.3s;
+}
+.mobile-nav::after {
+  @apply w-screen opacity-0 xl:hidden transition-all content-[""] fixed top-0 left-0 h-screen bg-[rgba(0,0,0,0.5)] z-10;
+}
+.mobile-nav-open .mobile-nav-header {
+  @apply hidden;
+}
+.mobile-nav-open .mobile-nav-close {
+  @apply block;
+}
+.mobile-nav-open .nav {
+  @apply w-[17.5rem] pt-4;
+}
+.mobile-nav-open .nav__logo {
+  @apply px-4 w-44;
+}
+.mobile-nav-open::after {
+  @apply opacity-100;
+}
+
 .settings {
-  @apply bg-light p-8 pb-12;
+  @apply bg-light p-4 sm:p-8;
 }
 .settings__heading {
   @apply mb-6;
@@ -226,7 +254,8 @@ img {
   @apply text-gray-100;
 }
 .settings__tab-btns {
-  @apply border border-gray-200 rounded-lg  flex w-fit overflow-hidden;
+  @apply border-y md:border border-gray-200 md:rounded-lg  flex overflow-hidden absolute left-0 md:left-[unset] md:relative;
+  @apply overflow-scroll w-full md:w-fit no-scrollbar;
 }
 .settings__tab-btns .active {
   @apply bg-light;
@@ -238,10 +267,10 @@ img {
   @apply border-r border-gray-200;
 }
 .settings__tab-btn button {
-  @apply px-4 py-2.5;
+  @apply px-4 py-2.5 whitespace-nowrap;
 }
 .settings__payment {
-  @apply pt-8 pb-5 border-b border-light-200;
+  @apply pt-16 md:pt-8 pb-5 border-b border-light-200;
 }
 .settings__payment--heading {
   @apply text-lg font-medium;
@@ -250,13 +279,13 @@ img {
   @apply text-sm text-gray-100 mt-1;
 }
 .settings__contact {
-  @apply flex pt-6 pb-1;
+  @apply flex flex-col gap-5 lg:flex-row lg:gap-0 pt-6 pb-1;
 }
 .settings__contact:not(:last-child) {
   @apply border-b border-light-200;
 }
 .settings__contact--text {
-  @apply min-w-[17.5rem] text-sm;
+  @apply lg:min-w-[17.5rem] text-sm;
 }
 .settings__contact--primary {
   @apply text-dark font-medium;
@@ -289,6 +318,9 @@ img {
 .settings__contact--input input:checked + .label-group label .settings__contact--radio {
   @apply opacity-100;
 }
+.settings__contact--input .label-group {
+  @apply w-full;
+}
 .settings__contact--input label {
   @apply flex gap-2;
 }
@@ -302,7 +334,7 @@ img {
   @apply text-gray-100;
 }
 .settings__contact--input-grp {
-  @apply relative flex w-[30.5rem] mt-3 ml-6;
+  @apply relative flex w-[calc(100%-1.5rem)] sm:w-[30.5rem] mt-3 ml-6;
 }
 .settings__contact--input-grp svg {
   @apply absolute left-4 top-1/2 -translate-y-1/2;
@@ -363,9 +395,9 @@ img {
 }
 
 .home {
-  @apply flex;
+  @apply flex flex-col gap-[4.625rem] xl:gap-0 xl:flex-row;
 }
 
 .settings__main {
-  @apply ml-[17.5rem] w-full;
+  @apply xl:ml-[17.5rem] w-full;
 }

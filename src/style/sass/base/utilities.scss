@@ -1,15 +1,9 @@
 @layer utilities {
-  .site-container {
-    @apply max-w-[90rem] px-6 sm:px-16 xl:px-[7.5rem] mx-auto;
-  }
   .no-scrollbar {
     -ms-overflow-style: none; /* Internet Explorer 10+ */
     scrollbar-width: none; /* Firefox */
     &::-webkit-scrollbar {
       display: none; /* Safari and Chrome */
     }
-  }
-  .no-click {
-    pointer-events: none;
   }
 }

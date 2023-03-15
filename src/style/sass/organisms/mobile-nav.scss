@@ -1,0 +1,38 @@
+.mobile-nav {
+  //   @apply block lg:hidden fixed bg-white z-10;
+  &-header {
+    @apply flex xl:hidden justify-between items-center p-4 fixed w-full bg-white z-50;
+  }
+  &-menu {
+    @apply p-2 hover:bg-light rounded-md;
+  }
+  &-close {
+    @apply hidden fixed right-4 top-4 z-50 p-4 hover:bg-[#929292] rounded-lg;
+  }
+  .nav {
+    @apply flex w-0 flex-col xl:hidden bg-white z-20;
+    transition: all 0.3s;
+  }
+  &::after {
+    @apply w-screen opacity-0 xl:hidden transition-all content-[""] fixed top-0 left-0 h-screen bg-[rgba(0,0,0,0.5)] z-10;
+  }
+  &-open {
+    .mobile-nav {
+      &-header {
+        @apply hidden;
+      }
+      &-close {
+        @apply block;
+      }
+    }
+    .nav {
+      @apply w-[17.5rem] pt-4;
+      &__logo {
+        @apply px-4 w-44;
+      }
+    }
+    &::after {
+      @apply opacity-100;
+    }
+  }
+}

@@ -24,7 +24,7 @@ const BillingTableRow: React.FunctionComponent<IBillingTableRowProps> = ({
   return (
     <tbody>
       <tr>
-        <td className="billing__table--data">
+        <td className="billing__table--data invoice">
           <div className="billing__table--data-wrap">
             <input
               className="checkbox-input"
@@ -61,9 +61,9 @@ const BillingTableRow: React.FunctionComponent<IBillingTableRowProps> = ({
             </label>
           </div>
         </td>
-        <td className="billing__table--data text-gray-100">{amount}</td>
-        <td className="billing__table--data text-gray-100">{date}</td>
-        <td className="billing__table--data">
+        <td className="billing__table--data text-gray-100 amount-table">{amount}</td>
+        <td className="billing__table--data text-gray-100 date-table">{date}</td>
+        <td className="billing__table--data status-table">
           <div className="status-paid">
             <svg
               width="12"
@@ -83,11 +83,11 @@ const BillingTableRow: React.FunctionComponent<IBillingTableRowProps> = ({
             <span>{status}</span>
           </div>
         </td>
-        <td className="billing__table--data">
+        <td className="billing__table--data users-table">
           <AvatarGroup avatars={users} />
         </td>
-        <td className="billing__table--data">
-          <button>
+        <td className="billing__table--data download-table">
+          <button title="download">
             <svg
               width="20"
               height="20"

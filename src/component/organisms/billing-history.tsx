@@ -100,11 +100,11 @@ const BillingHistory: React.FunctionComponent<IBillingHistoryProps> = (
                 </svg>
               </label>
             </th>
-            <th className="billing__table--head">Amount</th>
-            <th className="billing__table--head">Date</th>
-            <th className="billing__table--head">Status</th>
-            <th className="billing__table--head">Users on plan</th>
-            <th className="billing__table--head"></th>
+            <th className="billing__table--head amount-table">Amount</th>
+            <th className="billing__table--head date-table">Date</th>
+            <th className="billing__table--head status-table">Status</th>
+            <th className="billing__table--head users-table">Users on plan</th>
+            <th className="billing__table--head download-table"></th>
           </tr>
         </tbody>
         {billingData.map((data, index) => (
