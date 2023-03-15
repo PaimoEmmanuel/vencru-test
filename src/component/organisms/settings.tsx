@@ -92,11 +92,7 @@ const Settings: React.FunctionComponent<ISettingsProps> = (props) => {
                         strokeLinejoin="round"
                       />
                     </svg>
-                    <input
-                      type="text"
-                      value="billing@untitledui.com"
-                      readOnly
-                    />
+                    <input type="text" placeholder="billing@untitledui.com" />
                   </div>
                 </div>
               </div>

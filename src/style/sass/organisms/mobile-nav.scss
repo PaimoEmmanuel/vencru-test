@@ -14,7 +14,7 @@
     transition: all 0.3s;
   }
   &::after {
-    @apply w-screen opacity-0 xl:hidden transition-all content-[""] fixed top-0 left-0 h-screen bg-[rgba(0,0,0,0.5)] z-10;
+    @apply w-screen opacity-0 xl:hidden transition-all content-[""] fixed top-0 left-0 h-screen bg-[rgba(0,0,0,0.5)] -z-10;
   }
   &-open {
     .mobile-nav {
@@ -32,7 +32,7 @@
       }
     }
     &::after {
-      @apply opacity-100;
+      @apply opacity-100 z-10;
     }
   }
 }

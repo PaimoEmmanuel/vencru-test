@@ -71,12 +71,17 @@
           @apply opacity-100;
         }
       }
-      input:checked + .label-group label {
-        .settings__contact--radiobox {
-          @apply border-purple-100;
+      input:checked + .label-group {
+        label {
+          .settings__contact--radiobox {
+            @apply border-purple-100;
+          }
+          .settings__contact--radio {
+            @apply opacity-100;
+          }
         }
-        .settings__contact--radio {
-          @apply opacity-100;
+        .settings__contact--input-grp {
+          @apply flex;
         }
       }
       .label-group {
@@ -97,12 +102,12 @@
         }
       }
       &-grp {
-        @apply relative flex w-[calc(100%-1.5rem)] sm:w-[30.5rem] mt-3 ml-6;
+        @apply hidden relative w-[calc(100%-1.5rem)] sm:w-[30.5rem] mt-3 ml-6;
         svg {
           @apply absolute left-4 top-1/2 -translate-y-1/2;
         }
         input {
-          @apply h-11 w-full pl-11 pr-4 border border-gray-200 rounded-lg;
+          @apply h-11 w-full pl-11 pr-4 border border-gray-200 rounded-lg placeholder:text-black;
         }
       }
     }

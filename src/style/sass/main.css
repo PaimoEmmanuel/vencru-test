@@ -223,7 +223,7 @@ body {
   transition: all 0.3s;
 }
 .mobile-nav::after {
-  @apply w-screen opacity-0 xl:hidden transition-all content-[""] fixed top-0 left-0 h-screen bg-[rgba(0,0,0,0.5)] z-10;
+  @apply w-screen opacity-0 xl:hidden transition-all content-[""] fixed top-0 left-0 h-screen bg-[rgba(0,0,0,0.5)] -z-10;
 }
 .mobile-nav-open .mobile-nav-header {
   @apply hidden;
@@ -238,7 +238,7 @@ body {
   @apply px-4 w-44;
 }
 .mobile-nav-open::after {
-  @apply opacity-100;
+  @apply opacity-100 z-10;
 }
 
 .settings {
@@ -318,6 +318,9 @@ body {
 .settings__contact--input input:checked + .label-group label .settings__contact--radio {
   @apply opacity-100;
 }
+.settings__contact--input input:checked + .label-group .settings__contact--input-grp {
+  @apply flex;
+}
 .settings__contact--input .label-group {
   @apply w-full;
 }
@@ -334,13 +337,13 @@ body {
   @apply text-gray-100;
 }
 .settings__contact--input-grp {
-  @apply relative flex w-[calc(100%-1.5rem)] sm:w-[30.5rem] mt-3 ml-6;
+  @apply hidden relative w-[calc(100%-1.5rem)] sm:w-[30.5rem] mt-3 ml-6;
 }
 .settings__contact--input-grp svg {
   @apply absolute left-4 top-1/2 -translate-y-1/2;
 }
 .settings__contact--input-grp input {
-  @apply h-11 w-full pl-11 pr-4 border border-gray-200 rounded-lg;
+  @apply h-11 w-full pl-11 pr-4 border border-gray-200 rounded-lg placeholder:text-black;
 }
 .settings__contact--radiobox {
   @apply w-4 h-4 border cursor-pointer transition-all border-gray-200 rounded-full mt-0.5 flex justify-center items-center;
