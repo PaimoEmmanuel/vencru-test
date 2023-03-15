@@ -47,7 +47,7 @@ export const billingData = [
     amount: "USD $10.00",
     date: "Sept 1, 2022",
     status: "Paid",
-    users: ["/assets/avatar.png", "/assets/avatar.png", "/assets/avatar.png"],
+    users: ["/assets/avatar.png", "/assets/avatar-2.png", "/assets/avatar-3.png"],
   },
   {
     plan: "Basic plan - Aug 2022",

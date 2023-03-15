@@ -56,7 +56,13 @@ const Settings: React.FunctionComponent<ISettingsProps> = (props) => {
             </div>
             <div>
               <div className="settings__contact--input">
-                <input type="radio" name="email" id="email" hidden />
+                <input
+                  type="radio"
+                  name="email"
+                  id="email"
+                  defaultChecked
+                  hidden
+                />
                 <label htmlFor="email">
                   <span className="settings__contact--radiobox">
                     <span className="settings__contact--radio"></span>
@@ -92,7 +98,11 @@ const Settings: React.FunctionComponent<ISettingsProps> = (props) => {
                         strokeLinejoin="round"
                       />
                     </svg>
-                    <input type="text" placeholder="billing@untitledui.com" />
+                    <input
+                      type="text"
+                      name="email"
+                      placeholder="billing@untitledui.com"
+                    />
                   </div>
                 </div>
               </div>
