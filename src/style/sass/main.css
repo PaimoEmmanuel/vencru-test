@@ -102,8 +102,11 @@ body {
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
 }
 .billing__table {
-  @apply w-full border border-light-200 rounded-lg mt-6 sm:overflow-hidden;
+  @apply w-full border border-light-200 rounded-lg overflow-hidden;
   box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+}
+.billing__table-container {
+  @apply border-t border-light-200 mt-6 sm:rounded-lg;
 }
 .billing__table--head {
   @apply text-left text-xs text-gray-100 font-medium px-6 py-3;

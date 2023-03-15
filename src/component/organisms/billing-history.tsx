@@ -49,74 +49,78 @@ const BillingHistory: React.FunctionComponent<IBillingHistoryProps> = (
           Download all
         </button>
       </div>
-      <table className="billing__table">
-        <tbody>
-          <tr>
-            <th className="billing__table--head">
-              <input
-                className="checkbox-input"
-                type="checkbox"
-                name="invoice"
-                id="invoice"
-                hidden
-                checked={allBoxesChecked}
-                onChange={handleAllCheckboxChange}
-              />
-              <label htmlFor="invoice">
-                <span className="checkbox">
-                  <span className="check">
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M11.6667 3.5L5.25001 9.91667L2.33334 7"
-                        stroke="#7F56D9"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+      <div className="billing__table-container">
+        <table className="billing__table">
+          <tbody>
+            <tr>
+              <th className="billing__table--head">
+                <input
+                  className="checkbox-input"
+                  type="checkbox"
+                  name="invoice"
+                  id="invoice"
+                  hidden
+                  checked={allBoxesChecked}
+                  onChange={handleAllCheckboxChange}
+                />
+                <label htmlFor="invoice">
+                  <span className="checkbox">
+                    <span className="check">
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11.6667 3.5L5.25001 9.91667L2.33334 7"
+                          stroke="#7F56D9"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </span>
                   </span>
-                </span>
-                Invoice
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M8.00001 3.33334V12.6667M8.00001 12.6667L12.6667 8.00001M8.00001 12.6667L3.33334 8.00001"
-                    stroke="#667085"
-                    strokeWidth="1.33333"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </label>
-            </th>
-            <th className="billing__table--head amount-table">Amount</th>
-            <th className="billing__table--head date-table">Date</th>
-            <th className="billing__table--head status-table">Status</th>
-            <th className="billing__table--head users-table">Users on plan</th>
-            <th className="billing__table--head download-table"></th>
-          </tr>
-        </tbody>
-        {billingData.map((data, index) => (
-          <BillingTableRow
-            key={data.date}
-            {...data}
-            index={index}
-            checked={checkboxes[index]}
-            updateCheckbox={updateCheckbox}
-          />
-        ))}
-      </table>
+                  Invoice
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8.00001 3.33334V12.6667M8.00001 12.6667L12.6667 8.00001M8.00001 12.6667L3.33334 8.00001"
+                      stroke="#667085"
+                      strokeWidth="1.33333"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </label>
+              </th>
+              <th className="billing__table--head amount-table">Amount</th>
+              <th className="billing__table--head date-table">Date</th>
+              <th className="billing__table--head status-table">Status</th>
+              <th className="billing__table--head users-table">
+                Users on plan
+              </th>
+              <th className="billing__table--head download-table"></th>
+            </tr>
+          </tbody>
+          {billingData.map((data, index) => (
+            <BillingTableRow
+              key={data.date}
+              {...data}
+              index={index}
+              checked={checkboxes[index]}
+              updateCheckbox={updateCheckbox}
+            />
+          ))}
+        </table>
+      </div>
     </div>
   );
 };
