@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useEffect } from "react";
 import MobileNav from "../organisms/mobile-nav";
 import Settings from "../organisms/settings";
 import SideNav from "../organisms/side-nav";
@@ -6,6 +6,9 @@ import SideNav from "../organisms/side-nav";
 interface IHomePageProps {}
 
 const HomePage: React.FunctionComponent<IHomePageProps> = (props) => {
+  useEffect(() => {
+    document.title = "Untitled UI - Settings";
+  }, []);
   return (
     <div className="home">
       <aside>
