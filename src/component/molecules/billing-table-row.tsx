@@ -8,7 +8,7 @@ interface IBillingTableRowProps {
   index: number;
   users: string[];
   checked: boolean;
-  setCheckboxes: React.Dispatch<React.SetStateAction<boolean[]>>;
+  updateCheckbox: (index: number, update: boolean) => void;
 }
 
 const BillingTableRow: React.FunctionComponent<IBillingTableRowProps> = ({
@@ -19,7 +19,7 @@ const BillingTableRow: React.FunctionComponent<IBillingTableRowProps> = ({
   index,
   users,
   checked,
-  setCheckboxes,
+  updateCheckbox,
 }) => {
   return (
     <tr>
@@ -33,11 +33,7 @@ const BillingTableRow: React.FunctionComponent<IBillingTableRowProps> = ({
             hidden
             checked={checked}
             onChange={(e) => {
-              setCheckboxes((checkboxes) => {
-                const newboxes = [...checkboxes];
-                newboxes[index] = e.target.checked;
-                return newboxes;
-              });
+              updateCheckbox(index, e.target.checked);
             }}
           />
           <label htmlFor={date}>

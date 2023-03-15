@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { billingData } from "../../data";
-import BillingTableRow from "./billing-table-row";
+import BillingTableRow from "../molecules/billing-table-row";
 
 interface IBillingHistoryProps {}
 
@@ -10,6 +10,15 @@ const BillingHistory: React.FunctionComponent<IBillingHistoryProps> = (
   const [checkboxes, setCheckboxes] = useState(
     billingData.map((data) => false)
   );
+  const allBoxesChecked = checkboxes.every((checkbox) => checkbox === true);
+  const handleAllCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCheckboxes(checkboxes.map((data) => e.target.checked));
+  };
+  const updateCheckbox = (index: number, update: boolean) => {
+    const newboxes = [...checkboxes];
+    newboxes[index] = update;
+    setCheckboxes(newboxes);
+  };
   return (
     <div className="billing">
       <div className="billing__header">
@@ -49,10 +58,8 @@ const BillingHistory: React.FunctionComponent<IBillingHistoryProps> = (
               name="invoice"
               id="invoice"
               hidden
-              checked={checkboxes.every((checkbox) => checkbox === true)}
-              onChange={(e) => {
-                setCheckboxes(checkboxes.map((data) => e.target.checked));
-              }}
+              checked={allBoxesChecked}
+              onChange={handleAllCheckboxChange}
             />
             <label htmlFor="invoice">
               <span className="checkbox">
@@ -104,7 +111,7 @@ const BillingHistory: React.FunctionComponent<IBillingHistoryProps> = (
             {...data}
             index={index}
             checked={checkboxes[index]}
-            setCheckboxes={setCheckboxes}
+            updateCheckbox={updateCheckbox}
           />
         ))}
       </table>

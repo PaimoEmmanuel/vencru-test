@@ -1,6 +1,6 @@
 import { useState } from "react";
 import CardDetails from "../molecules/card-details";
-import BillingHistory from "../molecules/billing-history";
+import BillingHistory from "./billing-history";
 
 interface ISettingsProps {}
 
@@ -53,16 +53,24 @@ const Settings: React.FunctionComponent<ISettingsProps> = (props) => {
           </div>
           <div>
             <div className="settings__contact--input">
-              <input type="radio" name="email" id="email" />
+              <input type="radio" name="email" id="email" hidden />
               <label htmlFor="email">
-                <p>Send to my account email</p>
-                <span>olivia@untitledui.com</span>
+                <span className="settings__contact--radiobox">
+                  <span className="settings__contact--radio"></span>
+                </span>
+                <div>
+                  <p>Send to my account email</p>
+                  <span>olivia@untitledui.com</span>
+                </div>
               </label>
             </div>
             <div className="settings__contact--input">
-              <input type="radio" name="email" id="alt-email" />
-              <div>
+              <input type="radio" name="email" id="alt-email" hidden />
+              <div className="label-group">
                 <label htmlFor="alt-email">
+                  <span className="settings__contact--radiobox">
+                    <span className="settings__contact--radio"></span>
+                  </span>
                   <span>Send to an alternative email</span>
                 </label>
                 <div className="settings__contact--input-grp">

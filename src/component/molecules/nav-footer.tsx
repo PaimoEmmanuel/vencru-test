@@ -78,7 +78,7 @@ const NavFooter: React.FunctionComponent<INavFooterProps> = (props) => {
           <img src="/assets/new-feature.png" alt="new feature" />
         </div>
         <div className="footer__feature--note">
-          <button>Dismiss</button>
+          <button className="dismiss">Dismiss</button>
           <a href="#new" className="new">
             What’s new?
           </a>

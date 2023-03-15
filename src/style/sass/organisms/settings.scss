@@ -61,7 +61,30 @@
             0px 0px 0px 4px #f4ebff;
         }
       }
+      //
+      input:checked + label {
+        .settings__contact--radiobox {
+          @apply border-purple-100;
+        }
+        .settings__contact--radio {
+          @apply opacity-100;
+        }
+      }
+      input:checked + .label-group label {
+        .settings__contact--radiobox {
+          @apply border-purple-100;
+        }
+        .settings__contact--radio {
+          @apply opacity-100;
+        }
+      }
       label {
+        @apply flex gap-2;
+        &:hover {
+          .settings__contact--radiobox {
+            @apply border-purple-100;
+          }
+        }
         p {
           @apply font-medium text-dark;
         }
@@ -70,7 +93,7 @@
         }
       }
       &-grp {
-        @apply relative flex w-[30.5rem] mt-3;
+        @apply relative flex w-[30.5rem] mt-3 ml-6;
         svg {
           @apply absolute left-4 top-1/2 -translate-y-1/2;
         }
@@ -78,6 +101,12 @@
           @apply h-11 w-full pl-11 pr-4 border border-gray-200 rounded-lg;
         }
       }
+    }
+    &--radiobox {
+      @apply w-4 h-4 border cursor-pointer transition-all border-gray-200 rounded-full mt-0.5 flex justify-center items-center;
+    }
+    &--radio {
+      @apply h-1.5 w-1.5 block bg-purple-100 rounded-full opacity-0 transition-all;
     }
   }
   &__card {

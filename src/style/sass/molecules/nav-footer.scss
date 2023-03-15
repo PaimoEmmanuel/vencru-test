@@ -33,9 +33,12 @@
       }
     }
     &--note {
-      @apply flex text-sm gap-3 text-gray-100 font-medium;
+      @apply flex text-sm gap-3  font-medium;
+      .dismiss {
+        @apply text-gray-100 hover:opacity-70;
+      }
       .new {
-        @apply text-purple-100;
+        @apply text-purple-100 hover:opacity-100 hover:text-black;
       }
     }
   }
